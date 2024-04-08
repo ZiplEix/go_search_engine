@@ -20,3 +20,13 @@
 - Custom JWT Auth
 - Docker
 - Tailwind & daisyUI 😒
+
+## Database Start
+
+```bash
+docker build -t go_search_engine_database .
+```
+
+```bash
+docker run -d --name go_search_engine_database -p 5432:5432 go_search_engine_database
+```
