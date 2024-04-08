@@ -5,6 +5,8 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"search_engine/db"
+	"search_engine/routes"
 	"syscall"
 	"time"
 
@@ -13,11 +15,22 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func main() {
+func init() {
 	err := godotenv.Load(".env")
 	if err != nil {
 		panic("cannot find environment variables")
 	}
+	log.Println("Env loaded")
+
+	db.InitDb()
+	log.Println("Database Initialized")
+}
+
+func main() {
+	// err := godotenv.Load(".env")
+	// if err != nil {
+	// 	panic("cannot find environment variables")
+	// }
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -31,6 +44,8 @@ func main() {
 	})
 
 	app.Use(compress.New())
+
+	routes.SetRoutes(app)
 
 	// Start the server and listen for a shutdown
 	go func() {

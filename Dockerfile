@@ -1,0 +1,7 @@
+FROM postgres:latest
+
+ENV POSTGRES_DB=search
+ENV POSTGRES_USER=go_search
+ENV POSTGRES_PASSWORD=password
+
+EXPOSE 5432
