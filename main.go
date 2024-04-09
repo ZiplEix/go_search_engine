@@ -7,6 +7,7 @@ import (
 	"os/signal"
 	"search_engine/db"
 	"search_engine/routes"
+	"search_engine/utils"
 	"syscall"
 	"time"
 
@@ -46,6 +47,8 @@ func main() {
 	app.Use(compress.New())
 
 	routes.SetRoutes(app)
+
+	utils.StartCronJobs() // TODO: see if it is possible to put this in the init function
 
 	// Start the server and listen for a shutdown
 	go func() {

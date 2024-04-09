@@ -5,10 +5,10 @@
 - [ ] Web crawler
 - [ ] Custom Full Text Search Engine
 - [ ] Cronjobs
-- [ ] Logged in section to control the crawler
+- [x] Logged in section to control the crawler
 - [ ] JSON API
 - [ ] Rate limiting
-- [ ] Docker ??
+- [x] Docker ??
 
 ## Tech Stack
 

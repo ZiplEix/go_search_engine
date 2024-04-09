@@ -7,6 +7,8 @@ require (
 	github.com/joho/godotenv v1.5.1
 )
 
+require github.com/robfig/cron v1.2.0 // indirect
+
 require (
 	github.com/PuerkitoBio/goquery v1.9.1
 	github.com/a-h/templ v0.2.648
