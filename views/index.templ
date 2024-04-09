@@ -25,6 +25,9 @@ templ Home(amount string, searchOn, addNew bool) {
     @template() {
         <div class="flex flex-col justify-center items-center">
             <h1 class="text-2xl py-5 text-center">Welcome to Search Settings</h1>
+            <div class="py-5">
+                <button hx-post="/logout" class="btn">Logout</button>
+            </div>
             <form class="flex flex-col justify-center items-center gap-5 py-5"
                 hx-post="/"
                 hx-target="#feedback"
