@@ -76,3 +76,24 @@ func (crawled *CrawledUrl) Save() error {
 
 	return nil
 }
+
+func (crawled *CrawledUrl) GetNotIndex() ([]CrawledUrl, error) {
+	var urls []CrawledUrl
+	tx := DBConn.Where("indexed = ? AND last_tested IS NOT NULL", false).Find(&urls)
+	if tx.Error != nil {
+		return []CrawledUrl{}, fmt.Errorf("unable to get not indexed urls: %v", tx.Error)
+	}
+	return urls, nil
+}
+
+func (crawled *CrawledUrl) SetIndexedTrue(urls []CrawledUrl) error {
+	for _, url := range urls {
+		url.Indexed = true
+		err := DBConn.Model(&CrawledUrl{}).Where("id = ?", url.ID).Updates(url).Error
+		if err != nil {
+			return fmt.Errorf("unable to update url: %v", err)
+		}
+	}
+
+	return nil
+}

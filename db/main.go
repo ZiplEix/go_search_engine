@@ -39,7 +39,7 @@ func InitDb() {
 	log.Println("uuid-ossp extension enabled")
 
 	// Migrate the schema
-	err = DBConn.AutoMigrate(&User{}, &SearchSettings{}, &CrawledUrl{})
+	err = DBConn.AutoMigrate(&User{}, &SearchSettings{}, &CrawledUrl{}, &SearchIndex{})
 	if err != nil {
 		panic("failed to migrate database: " + err.Error())
 	}

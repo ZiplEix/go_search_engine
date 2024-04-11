@@ -7,7 +7,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 )
 
-require github.com/robfig/cron v1.2.0 // indirect
+require github.com/robfig/cron v1.2.0
 
 require (
 	github.com/PuerkitoBio/goquery v1.9.1
@@ -22,6 +22,7 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/klauspost/compress v1.17.6 // indirect
+	github.com/kljensen/snowball v0.9.0
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
@@ -30,7 +31,7 @@ require (
 	github.com/valyala/fasthttp v1.52.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
 	golang.org/x/crypto v0.19.0
-	golang.org/x/net v0.21.0 // indirect
+	golang.org/x/net v0.21.0
 	golang.org/x/sys v0.17.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	gorm.io/driver/postgres v1.5.7
